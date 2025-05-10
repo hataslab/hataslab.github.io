@@ -1,0 +1,126 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## Typography
+Primary Font:
+Helvetica Neue or Inter (sans-serif)
+For headings and body text to maintain clarity and minimalism
+Font weights: Light (300) for body text, Medium (500) for headings
+
+Secondary Font:
+Mono fonts like IBM Plex Mono or JetBrains Mono for code snippets or to emphasize important concepts
+Weight: Regular (400)
+
+Size Scale:
+Base size: 16px (1rem)
+Scale ratio: 1.25 (major third)
+H1: 2.5rem
+H2: 2rem
+H3: 1.5rem
+Body: 1rem
+Small text: 0.875rem
+
+## Color Palette
+Primary Colors:
+Off-white: #F7F7F7 (background)
+Charcoal: #333333 (primary text)
+
+Accent Colors:
+Slate blue: #6B7A8F (subtle highlights)
+Moss green: #7D8C6D (for links and interactive elements)
+Terracotta: #C17767 (sparingly used for emphasis)
+
+Functional Colors:
+Light gray: #E5E5E5 (dividers, borders)
+Medium gray: #BDBDBD (secondary text, inactive elements)
+
+## Layout
+Grid System:
+12-column grid
+Maximum width: 1200px
+Generous whitespace: 32px minimum margins
+Responsive breakpoints: 480px, 768px, 1024px, 1200px
+
+Content Structure:
+Asymmetrical layout with 2/3 main content, 1/3 sidebar
+On mobile: single column, stacked layout
+Card-based components with subtle shadows (2px blur, 30% opacity)
+
+Spacing:
+Base unit: 8px
+Content padding: 24px
+Section margins: 64px
+Paragraph spacing: 16px
+
+## Interaction & Motion
+Transitions:
+Subtle and purposeful
+Duration: 200-300ms
+Easing: Ease-out for entering elements, ease-in for exiting
+No bounces or elastic effects (keeping with MUJI minimalism)
+
+Hover States:
+Minimal color shifts (10% darker/lighter)
+Text links: No underline until hover
+Buttons: Slight background color change, no dramatic effects
+
+Scrolling:
+Smooth scroll behavior
+No scroll hijacking
+Subtle fade-in animations for content as it enters viewport (150ms duration)
+
+## UI Components
+Navigation:
+Minimal, fixed-position top navigation
+No dropdown menus; use simple, flat navigation
+Current page indicator: thin line under nav item (2px)
+
+Buttons:
+Minimal borders (1px)
+Modest padding (16px horizontal, 8px vertical)
+Text-only for secondary actions
+No rounded corners (or very subtle 2px radius maximum)
+
+Cards/Containers:
+White backgrounds (#FFFFFF)
+Very subtle borders (1px, #E5E5E5)
+Minimal box shadows (2px blur, 4px y-offset, 5% opacity)
+No rounded corners (or maximum 2px radius)
+
+Images:
+Desaturated by 10-15% to maintain cohesion with color palette
+No rounded corners on images
+Optional: subtle duotone effect using slate blue for visual consistency
+
+## Content Display
+Blog Posts:
+Large, clear headings
+Maximum line length: 70-75 characters
+Line height: 1.6 for body text
+Pull quotes in larger type (1.25rem) with left border accent (3px)
+Code blocks with light gray background (#F1F1F1)
+
+## Lab Entries:
+Timestamp in small, lighter text (0.875rem, #BDBDBD)
+Tags/categories with minimal styling (subtle background change only)
+Reading time indicator
+
+## Iconography
+Thin line icons (1.5px stroke)
+Monochromatic, using the charcoal primary color
+Consistent size (24x24px)
+No filled icons, only outlines
+Minimal use - only where truly helpful for navigation
+
+## Accessibility
+Minimum contrast ratio: 4.5:1 for all text
+Focus states clearly visible (2px border in accent color)
+All interactive elements accessible via keyboard
+Image alt text for all visual content
+
+## Loading States
+Minimal loading indicators
+Prefer content skeleton loaders over spinners
+No flashy animations during loading

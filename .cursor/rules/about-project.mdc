@@ -1,0 +1,173 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Core Objectives
+
+Create a digital laboratory space that authentically represents Hata's philosophy of connecting ideas and documenting personal growth
+Implement a minimalist Jekyll site on GitHub Pages that prioritizes content and readability
+Establish a sustainable publishing workflow that encourages regular documentation of thoughts and experiments
+
+Technical Framework
+GitHub Pages & Jekyll Implementation
+
+Repository Structure:
+
+Use a clean, flat repository structure
+Maintain separate branches for development (dev) and production (main)
+Implement GitHub Actions for automated builds and deployments
+
+
+Jekyll Configuration:
+
+Use Jekyll 4.2+ with minimal dependencies
+Implement collections for different types of content:
+
+_posts/ for chronological blog entries
+_experiments/ for documented lab experiments
+_notes/ for shorter, interconnected thoughts
+
+
+Utilize front matter extensively for metadata and content organization
+
+
+Build Performance:
+
+Keep plugin usage to a minimum (stick to GitHub Pages-supported plugins)
+Implement incremental builds for development
+Optimize asset delivery with proper caching strategies
+
+
+
+Content Strategy
+
+Content Types:
+
+Lab Notes: Short-form observations and connections (250-500 words)
+Experiments: Documented processes with outcomes and reflections (500-1500 words)
+Essays: Longer-form explorations of connected ideas (1500+ words)
+
+
+Content Structure:
+
+Each piece should follow a consistent format:
+
+Context/Background
+Observation/Experiment
+Reflection/Connection
+Next Questions
+
+
+Use YAML front matter to create relationships between pieces
+
+
+Publishing Cadence:
+
+Aim for quality over quantity
+No forced schedule, but regular documentation of genuine insights
+Group related content into "research threads" that can be followed
+
+
+
+Functionality Requirements
+
+Essential Features:
+
+Content-first reading experience
+Bidirectional linking between related content
+Simple search functionality
+Light/dark mode toggle (respecting system preferences)
+Minimal, unobtrusive navigation
+
+
+Content Display:
+
+Implement syntax highlighting for code blocks
+Support for mathematical notation (MathJax)
+Clean presentation of images and diagrams
+Footnotes and sidenotes for supplementary information
+
+Accessibility & Performance:
+
+Achieve perfect Lighthouse scores for accessibility
+Ensure responsive design works on all device sizes
+Optimize for low bandwidth connections
+Implement proper semantic HTML structure
+
+
+
+Development Philosophy
+
+Code Quality:
+
+Write clean, commented Liquid templates
+Use modular SCSS with BEM methodology
+Minimize JavaScript, using vanilla JS when possible
+Document site architecture for future reference
+
+
+Iteration Approach:
+
+Begin with minimal viable implementation
+Add features incrementally based on actual need
+Refactor regularly to maintain simplicity
+Prioritize content workflow over visual flourishes
+
+
+Technical Constraints:
+
+Embrace Jekyll limitations rather than fighting them
+No client-side frameworks or heavy libraries
+Static site only - no backend dependencies
+Work within GitHub Pages constraints when possible
+
+
+
+Success Metrics
+
+Primary Indicators:
+
+Ease of documenting and publishing new thoughts
+Clarity and readability of published content
+Ability to make connections between ideas
+Maintenance simplicity over time
+
+
+Secondary Considerations:
+
+Load time under 1.5 seconds on mobile connections
+Intuitive information architecture
+Positive feedback from observers (if any)
+Personal satisfaction with the documentation process
+
+
+
+Project Timeline
+
+Phase 1: Foundation
+
+Set up basic Jekyll structure
+Implement core templates and styles
+Establish content collections
+
+
+Phase 2: Content Seeding
+
+Publish initial lab notes and experiments
+Test and refine publishing workflow
+Adjust templates based on real content needs
+
+
+Phase 3: Refinement
+
+Implement bidirectional linking
+Add light/dark mode
+Optimize performance and accessibility
+
+
+Continuous Evolution:
+
+The site should evolve organically alongside the documented journey
+Form should always follow function
+Maintain MUJI-inspired simplicity even as features expand
