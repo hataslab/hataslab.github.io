@@ -121,18 +121,25 @@
       text-align: center;
       font-style: italic;
       color: #BDBDBD;
-      padding: 10px;
+      padding: 20px 10px;
+      position: relative;
+      margin: 10px 0;
     }
 
-    .home-content em:before,
-    .home-content em:after {
-      content: """;
-      font-size: 1.5em;
+    /* Remove the pseudo-element approach that was causing issues */
+    .home-content .quote-container {
+      display: inline-block;
+      position: relative;
+    }
+
+    .home-content .quote-mark {
+      color: #BDBDBD;
       opacity: 0.4;
-    }
-
-    .home-content em:after {
-      content: """;
+      font-size: 1.5em;
+      font-style: normal;
+      line-height: 0;
+      vertical-align: middle;
+      padding: 0 4px;
     }
 
     /* Lab showcase */
