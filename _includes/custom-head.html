@@ -6,10 +6,21 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @-webkit-keyframes fadeIn {
+      from { opacity: 0; -webkit-transform: translateY(10px); }
+      to { opacity: 1; -webkit-transform: translateY(0); }
+    }
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.03); }
       100% { transform: scale(1); }
+    }
+
+    @-webkit-keyframes pulse {
+      0% { -webkit-transform: scale(1); }
+      50% { -webkit-transform: scale(1.03); }
+      100% { -webkit-transform: scale(1); }
     }
 
     @keyframes borderGlow {
@@ -18,7 +29,39 @@
       100% { box-shadow: 0 0 5px rgba(125, 140, 109, 0.2); }
     }
 
-    /* Base styles */
+    @-webkit-keyframes borderGlow {
+      0% { -webkit-box-shadow: 0 0 5px rgba(125, 140, 109, 0.2); }
+      50% { -webkit-box-shadow: 0 0 15px rgba(125, 140, 109, 0.4); }
+      100% { -webkit-box-shadow: 0 0 5px rgba(125, 140, 109, 0.2); }
+    }
+
+    /* CSS animation classes - apply simple animation with fallbacks */
+    .fade-in {
+      -webkit-animation: fadeIn 0.8s ease-out forwards;
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Important: Ensure all content is visible by default, animation optional */
+    .home-content h2, 
+    .home-content p, 
+    .home-content ul, 
+    .post-item,
+    .lab-showcase,
+    .btn-outline-primary {
+      opacity: 1 !important; /* Force visibility */
+    }
+
+    .delay-100 { -webkit-animation-delay: 0.1s; animation-delay: 0.1s; }
+    .delay-200 { -webkit-animation-delay: 0.2s; animation-delay: 0.2s; }
+    .delay-300 { -webkit-animation-delay: 0.3s; animation-delay: 0.3s; }
+    .delay-400 { -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
+    .delay-500 { -webkit-animation-delay: 0.5s; animation-delay: 0.5s; }
+    .delay-600 { -webkit-animation-delay: 0.6s; animation-delay: 0.6s; }
+    .delay-700 { -webkit-animation-delay: 0.7s; animation-delay: 0.7s; }
+    .delay-800 { -webkit-animation-delay: 0.8s; animation-delay: 0.8s; }
+    .delay-900 { -webkit-animation-delay: 0.9s; animation-delay: 0.9s; }
+
+    /* Base styles ensuring content visibility */
     .home-content {
       margin-bottom: 3rem;
     }
@@ -28,15 +71,6 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
       display: inline-block;
-      opacity: 0;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      transform: translateY(10px);
-    }
-
-    .home-content h2.visible,
-    .animations-ready .home-content h2 {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .home-content h2:first-child {
@@ -49,52 +83,28 @@
       margin-left: 8px;
       opacity: 0.8;
       display: inline-block;
+      -webkit-animation: pulse 3s infinite ease-in-out;
       animation: pulse 3s infinite ease-in-out;
     }
-
-    /* Staggered delays */
-    .animations-ready .home-content h2:nth-child(1) { transition-delay: 0.1s; }
-    .animations-ready .home-content h2:nth-child(3) { transition-delay: 0.2s; }
-    .animations-ready .home-content h2:nth-child(5) { transition-delay: 0.3s; }
-    .animations-ready .home-content h2:nth-child(7) { transition-delay: 0.4s; }
-    .animations-ready .home-content h2:nth-child(9) { transition-delay: 0.5s; }
 
     .home-content p {
       margin-bottom: 1rem;
       line-height: 1.6;
-      opacity: 0;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      transform: translateY(10px);
-      transition-delay: 0.2s;
-    }
-
-    .home-content p.visible,
-    .animations-ready .home-content p {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .home-content ul {
       margin-bottom: 1.5rem;
       padding-left: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      transform: translateY(10px);
-      transition-delay: 0.3s;
-    }
-
-    .home-content ul.visible,
-    .animations-ready .home-content ul {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .home-content ul li {
       margin-bottom: 0.5rem;
+      -webkit-transition: -webkit-transform 0.2s ease, color 0.2s ease;
       transition: transform 0.2s ease, color 0.2s ease;
     }
 
     .home-content ul li:hover {
+      -webkit-transform: translateX(5px);
       transform: translateX(5px);
       color: #7D8C6D; /* moss green for links */
     }
@@ -104,14 +114,6 @@
       border: none;
       height: 1px;
       background: linear-gradient(90deg, transparent, #E5E5E5, transparent);
-      opacity: 0;
-      transition: opacity 1s ease-out;
-      transition-delay: 0.8s;
-    }
-
-    .home-content hr.visible,
-    .animations-ready .home-content hr {
-      opacity: 1;
     }
 
     .home-content em {
@@ -119,15 +121,7 @@
       text-align: center;
       font-style: italic;
       color: #BDBDBD;
-      opacity: 0;
-      transition: opacity 1s ease-out;
-      transition-delay: 0.9s;
       padding: 10px;
-    }
-
-    .home-content em.visible,
-    .animations-ready .home-content em {
-      opacity: 1;
     }
 
     .home-content em:before,
@@ -149,17 +143,9 @@
       margin: 20px 0;
       position: relative;
       overflow: hidden;
-      opacity: 0;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 4s ease-in-out;
-      transform: translateY(10px);
-      transition-delay: 0.2s;
-    }
-
-    .lab-showcase.visible,
-    .animations-ready .lab-showcase {
-      opacity: 1;
-      transform: translateY(0);
-      animation: borderGlow 4s infinite alternate;
+      box-shadow: 0 0 10px rgba(125, 140, 109, 0.3);
+      display: block !important; /* Force display */
+      background-color: rgba(30, 30, 30, 0.3); /* Subtle background in dark mode */
     }
 
     .lab-showcase:before {
@@ -179,9 +165,9 @@
     }
 
     .lab-showcase h2 {
-      opacity: 1;
-      transform: none;
-      transition: none;
+      margin-top: 0 !important;
+      display: block !important;
+      width: 100% !important;
     }
 
     /* Post list */
@@ -193,30 +179,16 @@
       margin-bottom: 2rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid #E5E5E5;
-      opacity: 0;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      transform: translateY(10px);
     }
-
-    .post-item.visible,
-    .animations-ready .post-item {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Staggered animation delay for posts */
-    .animations-ready .post-item:nth-child(1) { transition-delay: 0.3s; }
-    .animations-ready .post-item:nth-child(2) { transition-delay: 0.4s; }
-    .animations-ready .post-item:nth-child(3) { transition-delay: 0.5s; }
-    .animations-ready .post-item:nth-child(4) { transition-delay: 0.6s; }
-    .animations-ready .post-item:nth-child(5) { transition-delay: 0.7s; }
 
     .post-item:last-child {
       border-bottom: none;
     }
 
     .post-item:hover {
+      -webkit-transform: translateY(-3px);
       transform: translateY(-3px);
+      -webkit-transition: -webkit-transform 0.3s ease;
       transition: transform 0.3s ease;
     }
 
@@ -225,6 +197,7 @@
     }
 
     .post-item h3 a {
+      -webkit-transition: color 0.2s ease;
       transition: color 0.2s ease;
       position: relative;
     }
@@ -245,10 +218,12 @@
     }
 
     .post-item .post-meta i {
+      -webkit-transition: -webkit-transform 0.3s ease;
       transition: transform 0.3s ease;
     }
 
     .post-item .post-meta:hover i {
+      -webkit-transform: translateY(-2px);
       transform: translateY(-2px);
     }
 
@@ -261,53 +236,76 @@
     .btn-outline-primary {
       position: relative;
       overflow: hidden;
-      transition: all 0.3s ease, opacity 0.8s ease-out;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
       z-index: 1;
-      opacity: 0;
-    }
-
-    .animations-ready .btn-outline-primary {
-      opacity: 1;
-      transition-delay: 0.8s;
     }
 
     .btn-outline-primary:hover {
+      -webkit-transform: translateY(-2px);
       transform: translateY(-2px);
+    }
+
+    /* Accessibility and fallbacks */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in {
+        opacity: 1 !important;
+        -webkit-animation: none !important;
+        animation: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+      }
     }
   </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Set a slight delay to ensure the DOM is fully loaded
-      setTimeout(function() {
-        // Add a class to trigger animations
-        document.body.classList.add('animations-ready');
+      // First ensure all content is visible regardless of animations
+      var elements = document.querySelectorAll('.home-content h2, .home-content p, .lab-showcase, .home-content ul, .post-item, .btn-outline-primary');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.opacity = '1';
+      }
+      
+      // Make sure lab-showcase is visible
+      var showcase = document.querySelector('.lab-showcase');
+      if (showcase) {
+        showcase.style.display = 'block';
+        showcase.style.opacity = '1';
+      }
+      
+      // Then try to apply animations if supported
+      try {
+        // Apply animation classes directly
+        var animElements = [
+          { selector: '.home-content h2:nth-child(1)', delay: 'delay-100' },
+          { selector: '.home-content h2:nth-child(3)', delay: 'delay-200' },
+          { selector: '.home-content h2:nth-child(5)', delay: 'delay-300' },
+          { selector: '.home-content h2:nth-child(7)', delay: 'delay-400' },
+          { selector: '.home-content h2:nth-child(9)', delay: 'delay-500' },
+          { selector: '.home-content p', delay: 'delay-200' },
+          { selector: '.home-content ul', delay: 'delay-300' },
+          { selector: '.home-content hr', delay: 'delay-800' },
+          { selector: '.home-content em', delay: 'delay-900' },
+          { selector: '.lab-showcase', delay: 'delay-200' },
+          { selector: '.post-item:nth-child(1)', delay: 'delay-300' },
+          { selector: '.post-item:nth-child(2)', delay: 'delay-400' },
+          { selector: '.post-item:nth-child(3)', delay: 'delay-500' },
+          { selector: '.post-item:nth-child(4)', delay: 'delay-600' },
+          { selector: '.post-item:nth-child(5)', delay: 'delay-700' },
+          { selector: '.btn-outline-primary', delay: 'delay-800' }
+        ];
         
-        // Create intersection observer for scroll-based animations
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-              }
-            });
-          }, {
-            threshold: 0.1
-          });
-          
-          // Apply to specific elements
-          const elements = document.querySelectorAll('.home-content h2, .home-content p, .lab-showcase, .post-item');
-          elements.forEach(function(el) {
-            observer.observe(el);
-          });
-        } else {
-          // Fallback for browsers that don't support IntersectionObserver
-          document.querySelectorAll('.home-content h2, .home-content p, .lab-showcase, .post-item').forEach(function(el) {
-            el.classList.add('visible');
-          });
-        }
-      }, 100);
+        // Apply classes
+        animElements.forEach(function(item) {
+          var elems = document.querySelectorAll(item.selector);
+          for (var i = 0; i < elems.length; i++) {
+            elems[i].classList.add('fade-in', item.delay);
+          }
+        });
+      } catch (e) {
+        // If animations fail, content is still visible
+        console.log('Animation application failed, but content remains visible');
+      }
     });
   </script>
 {% endif %} 
