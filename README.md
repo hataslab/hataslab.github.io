@@ -1,3 +1,45 @@
+# 🔬 Hata's Lab
+
+A digital laboratory space that documents my journey of connecting ideas, experiments, and personal growth.
+
+## About This Space
+
+Hata's Lab is a minimalist Jekyll site hosted on GitHub Pages, designed to serve as a personal thinking environment where I document my journey as a games developer, thinker, and builder.
+
+This is not a traditional portfolio or product showcase, but rather a living workspace where ideas connect and thoughts take shape.
+
+## Core Philosophy
+
+I believe in the beauty of connection - how ideas, people, and experiences intertwine to create something greater than their parts. Like a laboratory where elements combine to form new compounds, this space exists to observe and document that process.
+
+The power isn't in the specific technologies or languages (those are just tools), but in the structural thinking that builds meaningful solutions.
+
+## Content Types
+
+This laboratory contains various types of content:
+
+- **Blog Posts**: Longer-form thoughts and reflections
+- **Lab Notes**: Quick observations and connections between ideas (250-500 words)
+- **Experiments**: Documented processes with outcomes and reflections (500-1500 words)
+
+## Technical Framework
+
+- Built with Jekyll on GitHub Pages
+- Minimalist design prioritizing content and readability
+- Separate collections for different content types
+- Light/dark mode support
+- Focus on performance and accessibility
+
+## For Observers
+
+This space exists primarily as my digital thinking environment. If you find something that resonates, sparks curiosity, or teaches you something new - that's a wonderful side effect, not the primary goal.
+
+Consider yourself an observer in this laboratory. No pressure to interact, just an open invitation to witness the experiments.
+
+---
+
+*Simplicity in each element. Beauty in their combination.*
+
 # Chirpy Starter
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
@@ -8,7 +50,7 @@ When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jeky
 from the theme's gem. If you have ever installed this theme gem, you can use the command
 `bundle info --path jekyll-theme-chirpy` to locate these files.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
+The Jekyll team claims that this is to leave the ball in the user's court, but this also results in users not being
 able to enjoy the out-of-the-box experience when using feature-rich themes.
 
 To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your

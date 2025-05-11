@@ -1,0 +1,72 @@
+/* 
+  Custom styles for Hata's Lab
+*/
+
+// Common styles for collection entries
+.experiment-entry, .note-entry {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.experiment-title, .note-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+
+  a {
+    color: var(--heading-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+}
+
+.experiment-meta, .note-meta {
+  font-size: 0.875rem;
+  color: var(--text-muted-color);
+  margin-bottom: 0.75rem;
+
+  .experiment-date, .note-date {
+    margin-right: 1rem;
+  }
+
+  a {
+    color: var(--text-muted-color);
+    
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+}
+
+.experiment-excerpt, .note-excerpt {
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.read-more {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Style for blockquotes - for the lab philosophy
+blockquote {
+  border-left: 3px solid var(--link-color);
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: var(--text-muted-color);
+  margin: 1.5rem 0;
+} 

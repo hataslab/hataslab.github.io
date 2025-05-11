@@ -1,0 +1,35 @@
+---
+layout: page
+# The Experiments list layout
+---
+
+{{ content }}
+
+<div id="experiments-list">
+  {% for experiment in site.experiments reversed %}
+    <article class="experiment-entry">
+      <h3 class="experiment-title">
+        <a href="{{ experiment.url | relative_url }}">{{ experiment.title }}</a>
+      </h3>
+      <div class="experiment-meta">
+        <span class="experiment-date">{{ experiment.date | date: "%Y-%m-%d" }}</span>
+        {% if experiment.categories.size > 0 %}
+        <span class="experiment-categories">
+          {% for category in experiment.categories %}
+            <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category }}</a>
+            {%- unless forloop.last -%}, {%- endunless -%}
+          {% endfor %}
+        </span>
+        {% endif %}
+      </div>
+      <div class="experiment-excerpt">
+        {% if experiment.content contains '<!-- excerpt_separator -->' %}
+          {{ experiment.content | split:'<!-- excerpt_separator -->' | first | strip_html | truncatewords: 50 }}
+        {% else %}
+          {{ experiment.content | strip_html | truncatewords: 50 }}
+        {% endif %}
+      </div>
+      <a href="{{ experiment.url | relative_url }}" class="read-more">Read more →</a>
+    </article>
+  {% endfor %}
+</div> 

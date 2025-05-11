@@ -1,0 +1,35 @@
+---
+layout: page
+# The Notes list layout
+---
+
+{{ content }}
+
+<div id="notes-list">
+  {% for note in site.notes reversed %}
+    <article class="note-entry">
+      <h3 class="note-title">
+        <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+      </h3>
+      <div class="note-meta">
+        <span class="note-date">{{ note.date | date: "%Y-%m-%d" }}</span>
+        {% if note.categories.size > 0 %}
+        <span class="note-categories">
+          {% for category in note.categories %}
+            <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category }}</a>
+            {%- unless forloop.last -%}, {%- endunless -%}
+          {% endfor %}
+        </span>
+        {% endif %}
+      </div>
+      <div class="note-excerpt">
+        {% if note.content contains '<!-- excerpt_separator -->' %}
+          {{ note.content | split:'<!-- excerpt_separator -->' | first | strip_html | truncatewords: 30 }}
+        {% else %}
+          {{ note.content | strip_html | truncatewords: 30 }}
+        {% endif %}
+      </div>
+      <a href="{{ note.url | relative_url }}" class="read-more">Read more →</a>
+    </article>
+  {% endfor %}
+</div> 
